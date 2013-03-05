@@ -19,6 +19,7 @@ AuthenticationProxy.prototype.getCurrentUser = function()
         user.emailAddress = parseUser.get("email");
         user.avatarImgUrl = parseUser.get("avatarImgUrl");
         user.displayName = parseUser.get("displayName");
+        user.SMS = parseUser.get("SMS");
     }
     
     return user;
@@ -35,6 +36,7 @@ AuthenticationProxy.prototype.login = function(username, password, successCallba
                             u.emailAddress = user.get("email");
                             u.avatarImgUrl = user.get("avatarImgUrl");
                             u.displayName = user.get("displayName");
+                            u.SMS = user.get("SMS");
                             successCallback(u);
                          },
                          error: function(user, error) {

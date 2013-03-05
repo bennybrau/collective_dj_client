@@ -13,6 +13,7 @@ function MainStatusPageMediator(viewComponent)
     if (this.getView())
     {
         this.getView().addEventListener(MainStatusPage.LOGOUT_USER, Relegate.create(this, this.onLogoutUser, this));
+        this.getView().addEventListener(MainStatusPage.CHECK_IN_USER, Relegate.create(this, this.onCheckInUser, this));
     }
 }
 
@@ -24,4 +25,9 @@ MainStatusPageMediator.prototype.getName = function()
 MainStatusPageMediator.prototype.onLogoutUser = function()
 {
     this.sendNotification(AppConstants.LOGOUT_USER, {});
+}
+
+MainStatusPageMediator.prototype.onCheckInUser = function()
+{
+    console.log("checking in to venue " + this.getView().selectedVenueId);
 }
