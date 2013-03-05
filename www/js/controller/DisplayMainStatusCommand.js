@@ -11,5 +11,8 @@ DisplayMainStatusCommand.prototype.execute = function(notification)
 {
     console.log("DisplayMainStatusCommand executed");
     
-    //TODO: implement login via proxy to Parse.
+    var curUser = notification.getBody().user;
+    
+    var mainStatusMediator = this.facade.retrieveMediator(MainStatusPageMediator.NAME);
+    this.sendNotification(AppConstants.SHOW_PAGE, {pageMediator: mainStatusMediator, userData: curUser});
 }

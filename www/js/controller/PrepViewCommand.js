@@ -26,4 +26,8 @@ PrepViewCommand.prototype.execute = function(notification)
     var loginMediator = new LoginPageMediator(login);
     this.facade.registerMediator(loginMediator);
     
+    var mainStatus = new MainStatusPage(document.getElementById('mainStatus'));
+    var mainStatusMediator = new MainStatusPageMediator(mainStatus);
+    this.facade.registerMediator(mainStatusMediator);
+    
 }

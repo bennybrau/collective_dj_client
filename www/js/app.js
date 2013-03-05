@@ -34,11 +34,10 @@ ApplicationFacade.prototype.getCurrentUser = function()
 {
     var user = null;
     
-    /*var authProxy = this.retrieveProxy(AuthenticationProxy.NAME);
+    var authProxy = this.retrieveProxy(AuthenticationProxy.NAME);
     if (authProxy)
     {
         user = authProxy.getCurrentUser();
     }
-     */
     return user;
 }

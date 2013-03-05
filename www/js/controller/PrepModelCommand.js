@@ -1,3 +1,5 @@
+includeJS("js/model/AuthenticationProxy.js");
+
 
 PrepModelCommand.prototype = new puremvc.SimpleCommand;
 
@@ -8,6 +10,7 @@ function PrepModelCommand()
 
 PrepModelCommand.prototype.execute = function(notification)
 {
-    //register proxies for data access
-    console.log("PrepModelCommand executed");
+    Parse.initialize("Bwg2bgfendIUGwwNZHmjkzs9Zwxl3MMJ54xGw76t", "BQ4qpU7bIS7qOxvVV6FAnRXmgN1djAggEIQ0pMcY");
+    
+    this.facade.registerProxy(new AuthenticationProxy());
 }

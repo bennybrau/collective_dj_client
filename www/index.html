@@ -9,7 +9,9 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="css/app.css" rel="stylesheet" media="screen">
         <title>Collective DJ</title>
-        <script src="http://code.jquery.com/jquery.js"></script>
+            
+            <script src="http://code.jquery.com/jquery.js"></script>
+            <script src="http://www.parsecdn.com/js/parse-1.2.1.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
             
             <script type="text/javascript" src="cordova-2.4.0.js"></script>
@@ -58,8 +60,10 @@
                         <option value="sch">Schaumburg</option>
                         <option value="arme">Casa De Arme</option>
                     </select>
-                    <button class="btn btn-primary" type="submit">Check In</button>
+                    <button id="checkInButton" class="btn btn-primary" type="button">Check In</button>
                 </form>
+                
+                <button id="logoutButton" class="btn btn-primary" type="button">Logout</button>
             </div>
         </div>
     </body>
