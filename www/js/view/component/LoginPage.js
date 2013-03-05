@@ -22,3 +22,9 @@ LoginPage.prototype.onLoginButtonClick = function()
     this.password = this.passwordInput.value;
     this.dispatchEvent(LoginPage.LOGIN_USER);
 }
+
+LoginPage.prototype._doPageEnter = function(data)
+{
+    $(this.emailAddressInput).val('');
+    $(this.passwordInput).val('');
+}

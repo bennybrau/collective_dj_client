@@ -1,5 +1,5 @@
 
-User.prototype.avatartImgUrl = null;
+User.prototype.avatarImgUrl = null;
 User.prototype.username = null;
 User.prototype.emailAddress = null;
 User.prototype.displayName = null;

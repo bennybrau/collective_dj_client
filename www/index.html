@@ -55,15 +55,25 @@
             </div>
             
             <div id="mainStatus" class="container-fluid check-in" style="display:none;">
-                <form class="form-search">
-                    <select id="venueChooser">
-                        <option value="sch">Schaumburg</option>
-                        <option value="arme">Casa De Arme</option>
-                    </select>
-                    <button id="checkInButton" class="btn btn-primary" type="button">Check In</button>
-                </form>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <ul id="avatarImgThumbnail" class="thumbnails"></ul>
+                    </div>
+                    
+                    <div class="span8">
+                        <div id="userInfo" class="container-fluid"></div>
+                    </div>
+                </div>
                 
-                <button id="logoutButton" class="btn btn-primary" type="button">Logout</button>
+                <div class="row-fluid">
+                    <form class="form-search">
+                        <select id="venueChooser">
+                            <option value="sch">Schaumburg</option>
+                            <option value="arme">Casa De Arme</option>
+                        </select>
+                        <button id="checkInButton" class="btn btn-primary" type="button">Check In</button>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
