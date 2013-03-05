@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B2C1F8016E5F95B007AA314 /* LogoutUserCommand.js in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C1F7F16E5F95B007AA314 /* LogoutUserCommand.js */; };
+		0B6366DF16E64A0B0081D9E5 /* CheckInUserCommand.js in Sources */ = {isa = PBXBuildFile; fileRef = 0B6366DE16E64A0B0081D9E5 /* CheckInUserCommand.js */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -64,7 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B2C1F7F16E5F95B007AA314 /* LogoutUserCommand.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = LogoutUserCommand.js; path = www/js/controller/LogoutUserCommand.js; sourceTree = "<group>"; };
+		0B6366DE16E64A0B0081D9E5 /* CheckInUserCommand.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = CheckInUserCommand.js; path = www/js/controller/CheckInUserCommand.js; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				0B2C1F7F16E5F95B007AA314 /* LogoutUserCommand.js */,
+				0B6366DE16E64A0B0081D9E5 /* CheckInUserCommand.js */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
@@ -413,7 +413,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				0B2C1F8016E5F95B007AA314 /* LogoutUserCommand.js in Sources */,
+				0B6366DF16E64A0B0081D9E5 /* CheckInUserCommand.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

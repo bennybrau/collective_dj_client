@@ -29,5 +29,10 @@ MainStatusPageMediator.prototype.onLogoutUser = function()
 
 MainStatusPageMediator.prototype.onCheckInUser = function()
 {
-    console.log("checking in to venue " + this.getView().selectedVenueId);
+    var user = this.contextData.userData;
+    if (user)
+    {
+        console.log("user " + user.displayName + " checking in to venue " + this.getView().selectedVenueId);
+        this.sendNotification(AppConstants.CHECK_IN_USER, {venueId: this.getView().selectedVenueId, fromSMS: user.SMS});
+    }
 }

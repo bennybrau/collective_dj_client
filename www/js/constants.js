@@ -5,6 +5,7 @@ var AppConstants = {
     DISPLAY_LOGIN : "displayLogin",
     SHOW_PAGE : "showPage",
     LOGIN_USER : "loginUser",
-    LOGOUT_USER : "logoutUser"
+    LOGOUT_USER : "logoutUser",
+    CHECK_IN_USER : "checkinUser"
     
 };
