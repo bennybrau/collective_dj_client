@@ -15,9 +15,8 @@ TotemServiceProxy.prototype.checkIn = function(venueId, fromSMS, successCallback
                             From: fromSMS
                         },
                         {
-                        success: function() {
-                            console.log("Successfully checked in " + fromSMS + " at venueid " + venueId);
-                            if (successCallback) successCallback();
+                        success: function(result) {
+                            if (successCallback) successCallback(result);
                         
                         },
                         error: function(err) {

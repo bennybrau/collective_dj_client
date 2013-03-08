@@ -16,12 +16,13 @@ CheckInUserCommand.prototype.execute = function(notification)
         if (totemProxy)
         {
             console.log("attempting checkin");
-            totemProxy.checkIn(venue, userSMS, Relegate.create(this, this.onCheckInSuccess), function(err) { alert('Unable to checkin user');});
+            totemProxy.checkIn(venue, userSMS, Relegate.create(this, this.onCheckInSuccess, this), function(err) { alert('Unable to checkin user');});
         }
     }
 }
 
-CheckInUserCommand.prototype.onCheckInSuccess = function(user)
+CheckInUserCommand.prototype.onCheckInSuccess = function(result)
 {
-    //this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: user});
+    alert("successfully checked in " + result.user.displayName + " at " + result.venue.name);
+    //this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: result.user, venue: result.venue});
 }
