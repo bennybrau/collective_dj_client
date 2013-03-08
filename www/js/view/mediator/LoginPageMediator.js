@@ -13,6 +13,7 @@ function LoginPageMediator(viewComponent)
     if (this.getView())
     {
         this.getView().addEventListener(LoginPage.LOGIN_USER, Relegate.create(this, this.onLoginUser, this));
+        this.getView().addEventListener(LoginPage.REGISTER_USER, Relegate.create(this, this.onRegisterUser, this));
     }
 }
 
@@ -30,4 +31,10 @@ LoginPageMediator.prototype.onLoginUser = function()
         console.log("Logging in user: " + username);
         this.sendNotification(AppConstants.LOGIN_USER, {username : username, password : password });
     }
+}
+
+LoginPageMediator.prototype.onRegisterUser = function()
+{
+    console.log("RegisterUser clicked");
+    this.sendNotification(AppConstants.DISPLAY_REGISTER_USER);
 }

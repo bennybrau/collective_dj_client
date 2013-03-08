@@ -47,6 +47,27 @@ AuthenticationProxy.prototype.login = function(username, password, successCallba
     }
 }
 
+AuthenticationProxy.prototype.registerUser = function(username, password, sms, nickname, successCallback, errorCallback)
+{
+    if (username && password && sms) {
+        var user = new Parse.User();
+        user.set("username", username);
+        user.set("email", username);
+        user.set("password", password);
+        user.set("SMS", sms);
+        user.set("displayName", nickname);
+        
+        user.signUp(null, {
+                    success: function(user) {
+                    successCallback(user);
+                    },
+                    error: function(user,error) {
+                    errorCallback(error);
+                    }
+        });
+    }
+}
+
 AuthenticationProxy.prototype.logout = function()
 {
     Parse.User.logOut();

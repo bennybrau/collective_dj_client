@@ -50,7 +50,24 @@
                     <h2 class="form-signin-heading">Please sign in</h2>
                     <input id="emailAddress" type="text" class="input-block-level" placeholder="Email address">
                     <input id="password" type="password" class="input-block-level" placeholder="Password">
-                    <button id="loginButton" class="btn btn-large btn-primary" type="button">Sign in</button>
+                    <div class="row-fluid">
+                        <button id="loginButton" class="btn btn-large btn-primary" type="button">Sign in</button>
+                        <button id="registerButton" class="btn btn-large btn-success" type="button">Register</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="register" style="display:none;">
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">Register for Collective DJ</h2>
+                    <input id="register_emailAddress" type="text" class="input-block-level" placeholder="Email address">
+                    <input id="register_password" type="password" class="input-block-level" placeholder="Password">
+                    <input id="register_sms" type="text" class="input-block-level" placeholder="Phone number (SMS)">
+                    <input id="register_nickname" type="text" class="input-block-level" placeholder="Nickname">
+                    <div class="row-fluid">
+                        <button id="register_registerButton" class="btn btn-large btn-success" type="button">Register</button>
+                        <button id="register_cancel" class="btn btn-large btn-danger" type="button">Cancel</button>
+                    </div>
                 </form>
             </div>
             
