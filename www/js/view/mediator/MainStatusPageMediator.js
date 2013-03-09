@@ -33,6 +33,6 @@ MainStatusPageMediator.prototype.onCheckInUser = function()
     if (user)
     {
         console.log("user " + user.displayName + " checking in to venue " + this.getView().selectedVenueId);
-        this.sendNotification(AppConstants.CHECK_IN_USER, {venueId: this.getView().selectedVenueId, fromSMS: user.SMS});
+        this.sendNotification(AppConstants.CHECK_IN_USER, {venueId: this.getView().selectedVenueId, username: user.username});
     }
 }

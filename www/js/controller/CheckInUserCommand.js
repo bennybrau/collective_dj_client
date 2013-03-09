@@ -8,15 +8,15 @@ function CheckInUserCommand()
 CheckInUserCommand.prototype.execute = function(notification)
 {
     var venue = notification.getBody().venueId;
-    var userSMS = notification.getBody().fromSMS;
+    var username = notification.getBody().username;
     
-    if (venue && userSMS)
+    if (venue && username)
     {
         var totemProxy = this.facade.retrieveProxy(TotemServiceProxy.NAME);
         if (totemProxy)
         {
             console.log("attempting checkin");
-            totemProxy.checkIn(venue, userSMS, Relegate.create(this, this.onCheckInSuccess, this), function(err) { alert('Unable to checkin user');});
+            totemProxy.checkIn(venue, username, Relegate.create(this, this.onCheckInSuccess, this), function(err) { alert('Unable to checkin user');});
         }
     }
 }

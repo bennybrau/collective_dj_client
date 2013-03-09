@@ -6,13 +6,13 @@ function TotemServiceProxy()
     puremvc.Proxy.apply(this, [TotemServiceProxy.NAME, new Array()]);
 }
 
-TotemServiceProxy.prototype.checkIn = function(venueId, fromSMS, successCallback, failureCallback)
+TotemServiceProxy.prototype.checkIn = function(venueId, username, successCallback, failureCallback)
 {
-    if (venueId && fromSMS) {
+    if (venueId && username) {
         Parse.Cloud.run('checkIn',
                         {
                             VenueId: venueId,
-                            From: fromSMS
+                            From: username
                         },
                         {
                         success: function(result) {
@@ -20,7 +20,7 @@ TotemServiceProxy.prototype.checkIn = function(venueId, fromSMS, successCallback
                         
                         },
                         error: function(err) {
-                            console.log("Unable to checkin user " + fromSMS + " at venueid " + venueId);
+                            console.log("Unable to checkin user " + username + " at venueid " + venueId);
                             if (failureCallback) failureCallback(err);
                         }
                         });
