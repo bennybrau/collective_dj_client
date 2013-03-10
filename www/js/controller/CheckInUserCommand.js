@@ -24,5 +24,5 @@ CheckInUserCommand.prototype.execute = function(notification)
 CheckInUserCommand.prototype.onCheckInSuccess = function(result)
 {
     alert("successfully checked in " + result.user.displayName + " at " + result.venue.name);
-    //this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: result.user, venue: result.venue});
+    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: result.user, venue: result.venue});
 }

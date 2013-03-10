@@ -14,6 +14,7 @@ function MainStatusPageMediator(viewComponent)
     {
         this.getView().addEventListener(MainStatusPage.LOGOUT_USER, Relegate.create(this, this.onLogoutUser, this));
         this.getView().addEventListener(MainStatusPage.CHECK_IN_USER, Relegate.create(this, this.onCheckInUser, this));
+        this.getView().addEventListener(MainStatusPage.REFRESH, Relegate.create(this, this.onRefresh, this));
     }
 }
 
@@ -34,5 +35,14 @@ MainStatusPageMediator.prototype.onCheckInUser = function()
     {
         console.log("user " + user.displayName + " checking in to venue " + this.getView().selectedVenueId);
         this.sendNotification(AppConstants.CHECK_IN_USER, {venueId: this.getView().selectedVenueId, username: user.username});
+    }
+}
+
+MainStatusPageMediator.prototype.onRefresh = function()
+{
+    var user = this.contextData.userData;
+    if (user)
+    {
+        this.sendNotification(AppConstants.WHERE_AM_I, {username: user.username});
     }
 }

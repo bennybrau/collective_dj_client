@@ -1,9 +1,11 @@
 MainStatusPage.prototype = new BasePage;
 MainStatusPage.prototype.parent = BasePage.prototype;
 MainStatusPage.prototype.constructor = MainStatusPage;
+MainStatusPage.prototype.updateInt = null;
 
 MainStatusPage.LOGOUT_USER = "logoutUser";
 MainStatusPage.CHECK_IN_USER = "checkInUser";
+MainStatusPage.REFRESH = "refresh";
 
 function MainStatusPage(divElem)
 {
@@ -13,9 +15,26 @@ function MainStatusPage(divElem)
     this.venueChooser = document.getElementById('venueChooser');
     this.avatarImgThumbnail = document.getElementById('avatarImgThumbnail');
     this.userInfoPanel = document.getElementById('userInfo');
+    this.venueInfoPanel = document.getElementById('venueInfo');
     
     if (this.checkInButton && this.venueChooser) {
         this.checkInButton.onclick = Relegate.create(this, this.onCheckInClick, this);
+    }
+    
+}
+
+MainStatusPage.prototype._doPageExit = function()
+{
+    if (this.updateInt) {
+        window.clearInterval(this.updateInt);
+        this.updateInt = null;
+    }
+    
+    if (this.avatarImgThumbnail) $(this.avatarImgThumbnail).empty();
+    if (this.userInfoPanel) $(this.userInfoPanel).empty();
+    if (this.venueInfoPanel) {
+        $(this.venueInfoPanel).empty();
+        $(this.venueInfoPanel).hide();
     }
 }
 
@@ -25,24 +44,36 @@ MainStatusPage.prototype._doPageEnter = function(data)
     if (userData)
     {
         if (userData.avatarImgUrl)
-            $(this.avatarImgThumbnail).append('<li><div class="thumbnail"><img src="' + userData.avatarImgUrl + '"></div></li>');
+            $(this.avatarImgThumbnail).html('<li><div class="thumbnail"><img src="' + userData.avatarImgUrl + '"></div></li>');
         
-        $(this.userInfoPanel).append('<div class="row-fluid"><b>' + userData.displayName + '</b></div><div class="row-fluid">' + userData.emailAddress + '</div><div class="row-fluid">' + userData.SMS + '</div><div class="row-fluid"><button id="logoutButton" class="btn-mini btn-primary" type="button">Logout</button>');
+        $(this.userInfoPanel).html('<div class="row-fluid"><b>' + userData.displayName + '</b></div><div class="row-fluid">' + userData.email + '</div><div class="row-fluid">' + userData.SMS + '</div><div class="row-fluid"><button id="logoutButton" class="btn-mini btn-primary" type="button">Logout</button>');
         
         $('#logoutButton').click(Relegate.create(this, this.onLogoutClick, this));
     }
+    
+    var venueData = data.pageData;
+    if (venueData) {
+        $(this.venueInfoPanel).show();
+        $(this.venueInfoPanel).html('<p class="text"><h5>Currently checked in at ' + venueData.name + '.</h5></p>');
+    }
+    else {
+        $(this.venueInfoPanel).empty();
+        $(this.venueInfoPanel).hide();
+    }
+    
+    if (this.updateInt == null)
+        this.updateInt = window.setInterval(Relegate.create(this, this.onRefreshStatus, this), 10000);
 }
 
-MainStatusPage.prototype._doPageExit = function()
+MainStatusPage.prototype.onRefreshStatus = function()
 {
-    if (this.avatarImgThumbnail)
-        $(this.avatarImgThumbnail).empty();
-    $(this.userInfoPanel).empty();
+    this.dispatchEvent(MainStatusPage.REFRESH);
 }
 
 
 MainStatusPage.prototype.onLogoutClick = function()
 {
+    this._doPageExit();
     this.dispatchEvent(MainStatusPage.LOGOUT_USER);
 }
 

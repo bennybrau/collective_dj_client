@@ -5,6 +5,7 @@ includeJS("js/controller/LoginUserCommand.js");
 includeJS("js/controller/LogoutUserCommand.js");
 includeJS("js/controller/RegisterUserCommand.js");
 includeJS("js/controller/CheckInUserCommand.js");
+includeJS("js/controller/WhereAmICommand.js");
 
 PrepControllerCommand.prototype = new puremvc.SimpleCommand;
 
@@ -25,4 +26,5 @@ PrepControllerCommand.prototype.execute = function(notification)
     this.facade.registerCommand(AppConstants.LOGOUT_USER, LogoutUserCommand);
     this.facade.registerCommand(AppConstants.REGISTER_USER, RegisterUserCommand);
     this.facade.registerCommand(AppConstants.CHECK_IN_USER, CheckInUserCommand);
+    this.facade.registerCommand(AppConstants.WHERE_AM_I, WhereAmICommand);
 }

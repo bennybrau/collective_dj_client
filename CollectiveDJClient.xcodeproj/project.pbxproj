@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BD5F26116EBFFDA00098521 /* WhereAmICommand.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F26016EBFFDA00098521 /* WhereAmICommand.js */; };
+		0BD5F26316ECF2CA00098521 /* Venue.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F26216ECF2CA00098521 /* Venue.js */; };
 		0BE7717916EA8A46007FA526 /* RegisterPage.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7717816EA8A46007FA526 /* RegisterPage.js */; };
 		0BE7717B16EA8B46007FA526 /* RegisterPageMediator.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7717A16EA8B46007FA526 /* RegisterPageMediator.js */; };
 		0BE7717D16EA8C3B007FA526 /* RegisterUserCommand.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7717C16EA8C3B007FA526 /* RegisterUserCommand.js */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BD5F26016EBFFDA00098521 /* WhereAmICommand.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = WhereAmICommand.js; path = www/js/controller/WhereAmICommand.js; sourceTree = "<group>"; };
+		0BD5F26216ECF2CA00098521 /* Venue.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = Venue.js; path = www/js/model/Venue.js; sourceTree = "<group>"; };
 		0BE7717816EA8A46007FA526 /* RegisterPage.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RegisterPage.js; path = www/js/view/component/RegisterPage.js; sourceTree = "<group>"; };
 		0BE7717A16EA8B46007FA526 /* RegisterPageMediator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RegisterPageMediator.js; path = www/js/view/mediator/RegisterPageMediator.js; sourceTree = "<group>"; };
 		0BE7717C16EA8C3B007FA526 /* RegisterUserCommand.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RegisterUserCommand.js; path = www/js/controller/RegisterUserCommand.js; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0BD5F26216ECF2CA00098521 /* Venue.js */,
+				0BD5F26016EBFFDA00098521 /* WhereAmICommand.js */,
 				0BE7717C16EA8C3B007FA526 /* RegisterUserCommand.js */,
 				0BE7717A16EA8B46007FA526 /* RegisterPageMediator.js */,
 				0BE7717816EA8A46007FA526 /* RegisterPage.js */,
@@ -422,6 +428,8 @@
 				0BE7717916EA8A46007FA526 /* RegisterPage.js in Sources */,
 				0BE7717B16EA8B46007FA526 /* RegisterPageMediator.js in Sources */,
 				0BE7717D16EA8C3B007FA526 /* RegisterUserCommand.js in Sources */,
+				0BD5F26116EBFFDA00098521 /* WhereAmICommand.js in Sources */,
+				0BD5F26316ECF2CA00098521 /* Venue.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,7 @@
 
 User.prototype.avatarImgUrl = null;
 User.prototype.username = null;
-User.prototype.emailAddress = null;
+User.prototype.email = null;
 User.prototype.displayName = null;
 User.prototype.SMS = null;
 

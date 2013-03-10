@@ -16,7 +16,7 @@ AuthenticationProxy.prototype.getCurrentUser = function()
     if (parseUser) {
         user = new User(parseUser.id);
         user.username = parseUser.get("username");
-        user.emailAddress = parseUser.get("email");
+        user.email = parseUser.get("email");
         user.avatarImgUrl = parseUser.get("avatarImgUrl");
         user.displayName = parseUser.get("displayName");
         user.SMS = parseUser.get("SMS");
@@ -33,7 +33,7 @@ AuthenticationProxy.prototype.login = function(username, password, successCallba
                          success:  function(user) {
                             var u = new User(user.id);
                             u.username = user.get("username");
-                            u.emailAddress = user.get("email");
+                            u.email = user.get("email");
                             u.avatarImgUrl = user.get("avatarImgUrl");
                             u.displayName = user.get("displayName");
                             u.SMS = user.get("SMS");
@@ -59,7 +59,13 @@ AuthenticationProxy.prototype.registerUser = function(username, password, sms, n
         
         user.signUp(null, {
                     success: function(user) {
-                    successCallback(user);
+                    var u = new User(user.id);
+                    u.username = user.get("username");
+                    u.email = user.get("email");
+                    u.avatarImgUrl = user.get("avatarImgUrl");
+                    u.displayName = user.get("displayName");
+                    u.SMS = user.get("SMS");
+                    successCallback(u);
                     },
                     error: function(user,error) {
                     errorCallback(error);
