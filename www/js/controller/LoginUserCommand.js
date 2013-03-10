@@ -28,5 +28,16 @@ LoginUserCommand.prototype.execute = function(notification)
 
 LoginUserCommand.prototype.onLoginSuccess = function(user)
 {
-    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: user});
+    var totemProxy = this.facade.retrieveProxy(TotemServiceProxy.NAME);
+    totemProxy.whereAmI(user.username, Relegate.create(this, this.onWhereAmISuccess, this),
+                        function(err) { alert('Unable to get current check-in location for user ' + user.username);});
+    
+    
+}
+
+LoginUserCommand.prototype.onWhereAmISuccess = function(venue)
+{
+    var user = this.facade.getCurrentUser();
+    
+    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: user, venue:venue});
 }

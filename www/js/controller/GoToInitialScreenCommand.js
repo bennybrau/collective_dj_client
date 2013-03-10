@@ -7,12 +7,23 @@ function GotoInitialScreenCommand()
 
 GotoInitialScreenCommand.prototype.execute = function(notification)
 {
-    if (this.facade.getCurrentUser())
+    var currentUser = this.facade.getCurrentUser();
+    if (currentUser)
     {
-        this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser()});
+        var totemProxy = this.facade.retrieveProxy(TotemServiceProxy.NAME);
+        if (totemProxy)
+        {
+            totemProxy.whereAmI(currentUser.username, Relegate.create(this, this.onWhereAmISuccess, this),
+                                function(err) { alert('Unable to get users current check-in');});
+        }
     }
     else
     {
         this.sendNotification(AppConstants.DISPLAY_LOGIN, {});
     }
+}
+
+GotoInitialScreenCommand.prototype.onWhereAmISuccess = function(venue)
+{
+    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser(), venue: venue});
 }
