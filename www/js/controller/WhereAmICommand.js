@@ -10,7 +10,6 @@ WhereAmICommand.prototype.execute = function(notification)
     console.log('executing WhereAmICommand');
     var username = notification.getBody().username;
     
-    console.log("username = " + username);
     if (username)
     {
         var totemProxy = this.facade.retrieveProxy(TotemServiceProxy.NAME);
@@ -25,5 +24,6 @@ WhereAmICommand.prototype.execute = function(notification)
 
 WhereAmICommand.prototype.onWhereAmISuccess = function(venue)
 {
+    console.log("venue is " + venue);
     this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser(), venue:venue});
 }

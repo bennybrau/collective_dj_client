@@ -45,6 +45,8 @@ MainStatusPage.prototype._doPageEnter = function(data)
     {
         if (userData.avatarImgUrl)
             $(this.avatarImgThumbnail).html('<li><div class="thumbnail"><img src="' + userData.avatarImgUrl + '"></div></li>');
+        else
+            $(this.avatarImgThumbnail).html('<li><div class="thumbnail"><img src="img/avatar_placeholder.png"></div></li>');
         
         $(this.userInfoPanel).html('<div class="row-fluid"><b>' + userData.displayName + '</b></div><div class="row-fluid">' + userData.email + '</div><div class="row-fluid">' + userData.SMS + '</div><div class="row-fluid"><button id="logoutButton" class="btn-mini btn-primary" type="button">Logout</button>');
         
