@@ -9,6 +9,6 @@ var AppConstants = {
     LOGOUT_USER : "logoutUser",
     CHECK_IN_USER : "checkinUser",
     REGISTER_USER : "registerUser",
-    WHERE_AM_I : "whereAmI"
+    WHERE_AM_I : "whereAmI",
     
 };

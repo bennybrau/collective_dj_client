@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BD5F26116EBFFDA00098521 /* WhereAmICommand.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F26016EBFFDA00098521 /* WhereAmICommand.js */; };
-		0BD5F26316ECF2CA00098521 /* Venue.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F26216ECF2CA00098521 /* Venue.js */; };
-		0BE7717916EA8A46007FA526 /* RegisterPage.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7717816EA8A46007FA526 /* RegisterPage.js */; };
-		0BE7717B16EA8B46007FA526 /* RegisterPageMediator.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7717A16EA8B46007FA526 /* RegisterPageMediator.js */; };
-		0BE7717D16EA8C3B007FA526 /* RegisterUserCommand.js in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7717C16EA8C3B007FA526 /* RegisterUserCommand.js */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -68,11 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BD5F26016EBFFDA00098521 /* WhereAmICommand.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = WhereAmICommand.js; path = www/js/controller/WhereAmICommand.js; sourceTree = "<group>"; };
-		0BD5F26216ECF2CA00098521 /* Venue.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = Venue.js; path = www/js/model/Venue.js; sourceTree = "<group>"; };
-		0BE7717816EA8A46007FA526 /* RegisterPage.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RegisterPage.js; path = www/js/view/component/RegisterPage.js; sourceTree = "<group>"; };
-		0BE7717A16EA8B46007FA526 /* RegisterPageMediator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RegisterPageMediator.js; path = www/js/view/mediator/RegisterPageMediator.js; sourceTree = "<group>"; };
-		0BE7717C16EA8C3B007FA526 /* RegisterUserCommand.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = RegisterUserCommand.js; path = www/js/controller/RegisterUserCommand.js; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -182,11 +172,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				0BD5F26216ECF2CA00098521 /* Venue.js */,
-				0BD5F26016EBFFDA00098521 /* WhereAmICommand.js */,
-				0BE7717C16EA8C3B007FA526 /* RegisterUserCommand.js */,
-				0BE7717A16EA8B46007FA526 /* RegisterPageMediator.js */,
-				0BE7717816EA8A46007FA526 /* RegisterPage.js */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
@@ -425,11 +410,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				0BE7717916EA8A46007FA526 /* RegisterPage.js in Sources */,
-				0BE7717B16EA8B46007FA526 /* RegisterPageMediator.js in Sources */,
-				0BE7717D16EA8C3B007FA526 /* RegisterUserCommand.js in Sources */,
-				0BD5F26116EBFFDA00098521 /* WhereAmICommand.js in Sources */,
-				0BD5F26316ECF2CA00098521 /* Venue.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

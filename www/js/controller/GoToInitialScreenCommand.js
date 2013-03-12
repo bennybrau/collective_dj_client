@@ -13,7 +13,7 @@ GotoInitialScreenCommand.prototype.execute = function(notification)
         var totemProxy = this.facade.retrieveProxy(TotemServiceProxy.NAME);
         if (totemProxy)
         {
-            totemProxy.whereAmI(currentUser.username, Relegate.create(this, this.onWhereAmISuccess, this),
+            totemProxy.whereAmI(currentUser.username, true, Relegate.create(this, this.onWhereAmISuccess, this),
                                 function(err) { alert('Unable to get users current check-in');});
         }
     }
@@ -23,7 +23,7 @@ GotoInitialScreenCommand.prototype.execute = function(notification)
     }
 }
 
-GotoInitialScreenCommand.prototype.onWhereAmISuccess = function(venue)
+GotoInitialScreenCommand.prototype.onWhereAmISuccess = function(result)
 {
-    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser(), venue: venue});
+    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser(), venue: result.venue, allUsers: result.users});
 }

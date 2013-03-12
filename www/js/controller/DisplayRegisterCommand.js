@@ -9,7 +9,6 @@ function DisplayRegisterCommand()
 
 DisplayRegisterCommand.prototype.execute = function(notification)
 {
-    console.log("DisplayRegisterCommand executed");
     var registerPageMediator = this.facade.retrieveMediator(RegisterPageMediator.NAME);
     this.sendNotification(AppConstants.SHOW_PAGE, {pageMediator: registerPageMediator, userData:null, pageData:null});
 }

@@ -9,11 +9,12 @@ function DisplayMainStatusCommand()
 
 DisplayMainStatusCommand.prototype.execute = function(notification)
 {
-    console.log("DisplayMainStatusCommand executed");
-    
     var curUser = notification.getBody().user;
     var curVenue = notification.getBody().venue;
+    var allUsers = notification.getBody().allUsers;
+    
+    var pgData = { venue: curVenue, users: allUsers };
     
     var mainStatusMediator = this.facade.retrieveMediator(MainStatusPageMediator.NAME);
-    this.sendNotification(AppConstants.SHOW_PAGE, {pageMediator: mainStatusMediator, userData: curUser, pageData:curVenue});
+    this.sendNotification(AppConstants.SHOW_PAGE, {pageMediator: mainStatusMediator, userData: curUser, pageData:pgData});
 }

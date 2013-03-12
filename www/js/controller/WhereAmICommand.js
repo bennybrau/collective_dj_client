@@ -7,23 +7,22 @@ function WhereAmICommand()
 
 WhereAmICommand.prototype.execute = function(notification)
 {
-    console.log('executing WhereAmICommand');
     var username = notification.getBody().username;
+    var includeAllOthers = (notification.getBody().includeAllOthers) ? notification.getBody().includeAllOthers : false;
     
     if (username)
     {
         var totemProxy = this.facade.retrieveProxy(TotemServiceProxy.NAME);
         if (totemProxy)
         {
-            totemProxy.whereAmI(username,
+            totemProxy.whereAmI(username, true,
                             Relegate.create(this, this.onWhereAmISuccess, this),
                                 function(err) { console.log(err.message);});
         }
     }
 }
 
-WhereAmICommand.prototype.onWhereAmISuccess = function(venue)
+WhereAmICommand.prototype.onWhereAmISuccess = function(result)
 {
-    console.log("venue is " + venue);
-    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser(), venue:venue});
+    this.sendNotification(AppConstants.DISPLAY_MAIN_STATUS, {user: this.facade.getCurrentUser(), venue:result.venue, allUsers: result.users});
 }

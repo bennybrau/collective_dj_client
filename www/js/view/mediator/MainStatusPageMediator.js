@@ -33,7 +33,6 @@ MainStatusPageMediator.prototype.onCheckInUser = function()
     var user = this.contextData.userData;
     if (user)
     {
-        console.log("user " + user.displayName + " checking in to venue " + this.getView().selectedVenueId);
         this.sendNotification(AppConstants.CHECK_IN_USER, {venueId: this.getView().selectedVenueId, username: user.username});
     }
 }
@@ -43,6 +42,6 @@ MainStatusPageMediator.prototype.onRefresh = function()
     var user = this.contextData.userData;
     if (user)
     {
-        this.sendNotification(AppConstants.WHERE_AM_I, {username: user.username});
+        this.sendNotification(AppConstants.WHERE_AM_I, {username: user.username, includeAllOthers: true});
     }
 }

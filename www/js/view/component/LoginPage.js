@@ -25,7 +25,6 @@ function LoginPage(divElem)
 
 LoginPage.prototype.onRegisterButtonClick = function()
 {
-    //console.log('onRegisterButtonClicked');
     this.dispatchEvent(LoginPage.REGISTER_USER);
 }
 

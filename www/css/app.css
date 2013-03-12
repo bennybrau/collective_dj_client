@@ -44,3 +44,8 @@ body {
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+.otherUserThumbnail {
+    max-width: 75px;
+    max-height: 75px;
+}

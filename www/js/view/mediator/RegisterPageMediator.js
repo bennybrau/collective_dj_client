@@ -35,7 +35,6 @@ RegisterPageMediator.prototype.onRegisterUser = function()
     var nickname = this.getView().nickname;
     
     if (username && password && sms) {
-        //console.log("Going to register " + username + " with sms " + sms);
         this.sendNotification(AppConstants.REGISTER_USER, {username : username, password : password, sms: sms, nickname: nickname });
     }
     else {

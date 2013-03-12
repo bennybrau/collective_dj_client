@@ -35,6 +35,5 @@ LoginPageMediator.prototype.onLoginUser = function()
 
 LoginPageMediator.prototype.onRegisterUser = function()
 {
-    console.log("RegisterUser clicked");
     this.sendNotification(AppConstants.DISPLAY_REGISTER_USER);
 }
