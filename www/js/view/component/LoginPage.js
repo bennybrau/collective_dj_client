@@ -30,7 +30,19 @@ LoginPage.prototype.onRegisterButtonClick = function()
 
 LoginPage.prototype.onLoginButtonClick = function()
 {
-    this.emailAddress = this.emailAddressInput.value;
+    if (!validateEmail(this.emailAddressInput.value))
+    {
+        alert('Please enter a valid email address');
+        return;
+    }
+    
+    if (!validateNotEmpty(this.passwordInput.value))
+    {
+        alert('Please enter password');
+        return;
+    }
+    
+    this.emailAddress = this.emailAddressInput.value.toLowerCase();
     this.password = this.passwordInput.value;
     this.dispatchEvent(LoginPage.LOGIN_USER);
 }

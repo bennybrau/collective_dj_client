@@ -10,6 +10,16 @@ function includeJS(url)
   }  
 }
 
+function validateEmail(email)
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+function validateNotEmpty(str) {
+    return (str && str.length > 0);
+}
+
 function isJSIncluded(url)
 {
   var headNodes = document.getElementsByTagName("head")[0].childNodes;
